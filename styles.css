@@ -21,6 +21,7 @@ header {
 h1 {
     font-size: 3em;
     margin: 0;
+    padding-left: 40px;
 }
 
 main {
