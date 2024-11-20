@@ -23,7 +23,7 @@ header {
 h1 {
     color: #3498db; /* Couleur du texte */
     font-family: 'Alef', sans-serif; /* Police de caractères */
-    font-size: 40px; /* Taille du texte */
+    font-size: 50px; /* Taille du texte */
     text-align: center; /* Centrer le titre */
     font-weight: bold; /* Rendre le texte en gras */
     text-transform: uppercase; /* Mettre le texte en majuscules */
