@@ -28,7 +28,7 @@ h1 {
     font-weight: bold; /* Rendre le texte en gras */
     text-transform: uppercase; /* Mettre le texte en majuscules */
     text-shadow: 2px 2px 4px #000000; /* Ombre légère autour du texte */
-    margin: 20px 0; /* Marge autour du titre */
+    margin: 10px 0; /* Marge autour du titre */
 }
 
 main {
