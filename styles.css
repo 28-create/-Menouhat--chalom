@@ -45,7 +45,7 @@ footer {
 }
 ul, ol {
     text-align: left; /* Aligne les listes à gauche */
-    padding-left: 60px; /* Ajoute un grand retrait (ajustez la valeur si nécessaire) */
+    padding-left: 80px; /* Ajoute un grand retrait (ajustez la valeur si nécessaire) */
     margin: 20px 0; /* Ajoute de l'espace au-dessus et en dessous de la liste */
 }
 
