@@ -19,10 +19,16 @@ header {
     max-width: 150px;
     height: auto;
 }
+
 h1 {
-    font-size: 3em;
-    margin: 0;
-    padding-left: 40px;
+    color: #3498db; /* Couleur du texte */
+    font-family: 'Alef', sans-serif; /* Police de caractères */
+    font-size: 40px; /* Taille du texte */
+    text-align: center; /* Centrer le titre */
+    font-weight: bold; /* Rendre le texte en gras */
+    text-transform: uppercase; /* Mettre le texte en majuscules */
+    text-shadow: 2px 2px 4px #000000; /* Ombre légère autour du texte */
+    margin: 20px 0; /* Marge autour du titre */
 }
 
 main {
