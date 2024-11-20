@@ -10,6 +10,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon-32x32.png" sizes="32x32" type="image/png">
+    <title>Deux Colonnes</title>
+    <style>
+        /* Style pour la mise en page à deux colonnes */
+        .container {
+            display: flex;
+        }
+        .column {
+            flex: 1; /* Chaque colonne prend 50% de l'espace */
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .column:first-child {
+            background-color: #f9f9f9;
+        }
+        .column:last-child {
+            background-color: #e9e9e9;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -17,14 +35,23 @@
         <img src="logo.png" alt="Logo de la synagogue" class="logo">
     </header>
     <main>
-        <section id="horaires">
-            <h2>זמני יום חול</h2>
+        <div class="container">
+        <div class="column">
+            <h2>Colonne 1</h2>
+            <p><section id="horaires">
+                <h2>זמני יום חול</h2>
             <ul>
                 <li>Chaharit (matin) : 6h20</li>
                 <li>Minha (après-midi) : 12h50</li>
                 <li>Arvit (soir) : 17h45</li>
             </ul>
-        <section id="horaires">
+            </p>
+        
+            
+         </div>
+        <div class="column">
+            <h2>Colonne 2</h2>
+            <p><section id="horaires">
             <h2>זמני יום שבת</h2>
             <ul>
                 <li>Allumage des Nerot: 16h00 </li>
@@ -33,7 +60,9 @@
                 <li>Minha (après-midi) : 15h50</li>
                 <li>Arvit Motsaé Chabbat : 17h15</li>
             </ul>
-        </section>
+            </p>
+        </div>
+    </div>        </section>
         <section id="temps">
             <h2>זמני היום</h2>
             <ul>
