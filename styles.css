@@ -45,12 +45,12 @@ main {
 }
 
 footer {
-    background-color: #003366;
+    background-color: #4a90e2 !important; /* La propriété !important priorise ce style */
     color: white;
-    padding: 5px;
-    bottom: 0;
-    width: 100%;
+    text-align: center;
+    padding: 10px 0;
 }
+
 ul, ol {
     text-align: left; /* Aligne les listes à gauche */
     list-style-position: inside;
