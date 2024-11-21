@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Exemple de calcul des horaires du jour (vous pouvez les remplacer par des API ou des données précises)
-   const API_KEY = "VOTRE_CLE_API";
+   const API_KEY = "94df5eda1fd569740f89ad8a912a0fa9d79b333ead13b72220f4d8c5ba0f69133f7a40410088cf07";
 const JERUSALEM_LAT = 31.7683; // Latitude de Jérusalem
 const JERUSALEM_LON = 35.2137; // Longitude de Jérusalem
 
