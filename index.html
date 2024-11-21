@@ -93,7 +93,7 @@
         async function fetchParasha() {
             try {
                 const today = new Date().toISOString().split('T')[0]; // Date au format AAAA-MM-JJ
-                const response = await fetch(`https://www.hebcal.com/shabbat?cfg=json&geonameid=3448439&m=50`);
+                const response = await fetch(`https://www.hebcal.com/shabbat?cfg=json&geonameid=3448439&lg=he&m=50`);
                 const data = await response.json();
 
                 // Trouver la paracha dans les données de l'API
