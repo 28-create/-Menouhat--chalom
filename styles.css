@@ -31,6 +31,15 @@ h1 {
     margin: 10px 0; /* Marge autour du titre */
 }
 
+#parasha {
+    font-size: 1.8em;
+    color: #d35400;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+p {
+    direction: rtl;
 main {
     margin: 10px 0;
 }
