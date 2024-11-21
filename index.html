@@ -43,7 +43,8 @@
             <p><section id="horaires">
                 <h2>זמני יום שבת</h2>
                 <h2>פרשת השבוע</h2>
-                <p id="parasha" dir="rtl"></p>
+                <p id="parasha" dir="rtl">טוען את פרשת השבוע...</p>
+
             <ul>
                  <li>Allumage des Nerot: 16h00 </li>
                 <li>Minha Erev Chabbat : 16h10</li>
@@ -88,30 +89,30 @@
         <p>© 2024 מנוחת שלום. Tous droits réservés.</p>
     </footer>
      <script>
-        // רשימת פרשיות השבוע בעברית
-        const parshiot = [
-            "בראשית", "נח", "לך לך", "וירא", "חיי שרה",
-            "תולדות", "ויצא", "וישלח", "וישב", "מקץ",
-            "ויגש", "ויחי", "שמות", "וארא", "בא", "בשלח",
-            "יתרו", "משפטים", "תרומה", "תצווה", "כי תשא",
-            "ויקהל", "פקודי", "ויקרא", "צו", "שמיני",
-            "תזריע", "מצורע", "אחרי מות", "קדושים", "אמור",
-            "בהר", "בחקתי", "במדבר", "נשא", "בהעלותך",
-            "שלח", "קורח", "חקת", "בלק", "פנחס", "מטות",
-            "מסעי", "דברים", "ואתחנן", "עקב", "ראה", "שופטים",
-            "כי תצא", "כי תבוא", "נצבים", "וילך", "האזינו",
-            "וזאת הברכה"
-        ];
+        // Appel de l'API Hebcal
+        async function fetchParasha() {
+            try {
+                const today = new Date().toISOString().split('T')[0]; // Date au format AAAA-MM-JJ
+                const response = await fetch(`https://www.hebcal.com/shabbat?cfg=json&geonameid=3448439&m=50`);
+                const data = await response.json();
 
-        function getParasha() {
-            const startDate = new Date("2024-10-23"); // תאריך שמחת תורה
-            const today = new Date();
-            const weekNumber = Math.floor((today - startDate) / (7 * 24 * 60 * 60 * 1000));
-            return parshiot[weekNumber % parshiot.length];
+                // Trouver la paracha dans les données de l'API
+                const parasha = data.items.find(item => item.category === "parashat");
+                if (parasha) {
+                    document.getElementById("parasha").textContent = parasha.title;
+                } else {
+                    document.getElementById("parasha").textContent = "פרשת השבוע אינה זמינה";
+                }
+            } catch (error) {
+                console.error("Erreur lors de la récupération de la paracha:", error);
+                document.getElementById("parasha").textContent = "שגיאה בחיבור";
+            }
         }
-         
-        document.getElementById("parasha").textContent = getParasha();
-    </script>
+
+        // Appeler la fonction pour afficher la paracha
+        fetchParasha();
+      </script>
+
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
 </body>
