@@ -45,7 +45,7 @@ main {
 }
 
 footer {
-    background-color: #4a90e2 !important; /* La propriété !important priorise ce style */
+    background-color: #003366 !important; /* La propriété !important priorise ce style */
     color: white;
     text-align: center;
     padding: 10px 0;
