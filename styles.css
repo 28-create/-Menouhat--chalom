@@ -50,6 +50,12 @@ footer {
     text-align: center;
     padding: 10px 0;
 }
+    
+.no-bullets {
+    list-style-type: none; /* Supprime les puces */
+    padding: 0; /* Enlève les marges internes */
+    margin: 0; /* Enlève les marges externes */
+}
 
 ul, ol {
     text-align: left; /* Aligne les listes à gauche */
