@@ -1,5 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
-   https://www.hebcal.com/zmanim?cfg=json&geonameid=281184
+document.addEventListener("DOMContentLoaded", () => 
 async function fetchZmanim() {
     try {
         const response = await fetch("https://www.hebcal.com/zmanim?cfg=json&geonameid=281184");
