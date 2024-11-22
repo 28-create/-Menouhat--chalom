@@ -1,29 +1,31 @@
 document.addEventListener("DOMContentLoaded", () => {
    https://www.hebcal.com/zmanim?cfg=json&geonameid=281184
-   async function fetchZmanimAndDisplay() {
+async function fetchZmanim() {
     try {
         const response = await fetch("https://www.hebcal.com/zmanim?cfg=json&geonameid=281184");
         const data = await response.json();
 
-        // Récupérer les horaires en format ISO
-        const sunriseISO = data.times.sunrise;
-        const sunsetISO = data.times.sunset;
-        const midnightISO = data.times.midnight;
+        // Extraire les horaires
+        const sunrise = new Date(data.times.sunrise).toLocaleTimeString("he-IL", { hour: "2-digit", minute: "2-digit" });
+        const sunset = new Date(data.times.sunset).toLocaleTimeString("he-IL", { hour: "2-digit", minute: "2-digit" });
+        const chatzot = new Date(data.times.chatzot).toLocaleTimeString("he-IL", { hour: "2-digit", minute: "2-digit" });
+        const minchaGedola = new Date(data.times.minchaGedola).toLocaleTimeString("he-IL", { hour: "2-digit", minute: "2-digit" });
+        const tzeit = new Date(data.times.tzeitHakochavim).toLocaleTimeString("he-IL", { hour: "2-digit", minute: "2-digit" });
 
-        // Convertir en format lisible
-        const sunrise = new Date(sunriseISO).toLocaleTimeString("he-IL", { hour: "2-digit", minute: "2-digit" });
-        const sunset = new Date(sunsetISO).toLocaleTimeString("he-IL", { hour: "2-digit", minute: "2-digit" });
-        const midnight = new Date(midnightISO).toLocaleTimeString("he-IL", { hour: "2-digit", minute: "2-digit" });
-
-        // Afficher dans le DOM
-        document.getElementById("sunrise").textContent = `נץ החמה: ${sunrise}`;
-        document.getElementById("sunset").textContent = `שקיעה: ${sunset}`;
-        document.getElementById("midnight").textContent = `חצות: ${midnight}`;
+        // Afficher les horaires dans le DOM
+        document.getElementById("zmanim").innerHTML = `
+            <p>נץ החמה: ${sunrise}</p>
+            <p>שקיעה: ${sunset}</p>
+            <p>חצות היום: ${chatzot}</p>
+            <p>מנחה גדולה: ${minchaGedola}</p>
+            <p>צאת הכוכבים: ${tzeit}</p>
+        `;
     } catch (error) {
-        console.error("Erreur lors de la récupération des horaires:", error);
+        console.error("Erreur lors de la récupération des horaires :", error);
     }
 }
 
-fetchZmanimAndDisplay();
+fetchZmanim();
+
 
 
