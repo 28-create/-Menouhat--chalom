@@ -20,6 +20,11 @@ header {
     height: auto;
 }
 
+#date-civil, #date-hebraique, #heure {
+  font-size: 18px;
+  margin: 5px;
+}
+
 h1 {
     color: #3498db; /* Couleur du texte */
     font-family: 'Alef', sans-serif; /* Police de caractères */
