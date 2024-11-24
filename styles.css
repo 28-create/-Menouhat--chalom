@@ -51,6 +51,7 @@ main {
 
 footer {
     background-color: #003366 !important; /* La propriété !important priorise ce style */
+    font-family: 'arial', sans-serif;
     color: white;
     text-align: center;
     padding: 10px 0;
