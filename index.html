@@ -36,8 +36,21 @@
     <header>
         <h1>בית המדרש מנוחת שלום</h1>
         <img src="logo.png" alt="Logo de la synagogue" class="logo">
-        <div id="date-civil"></div>
-        <div id="date-hebraique"></div>
+        <p>La date actuelle grégorienne (civile) est : <span id="gregorian-date"></span></p>
+        <p>La date actuelle hébraïque est : <span id="hebrew-date"></span></p>
+    
+        <script>
+            // Afficher la date grégorienne (civile)
+            const currentDate = new Date();
+            const formattedGregorianDate = currentDate.toLocaleDateString('fr-FR'); // Format français
+            document.getElementById('gregorian-date').textContent = formattedGregorianDate;
+    
+            // Afficher la date hébraïque
+            const hebrewDate = new HebrewDate(currentDate); // Créer l'objet de la date hébraïque
+            const formattedHebrewDate = hebrewDate.toString(); // Obtenir la représentation sous forme de chaîne
+            document.getElementById('hebrew-date').textContent = formattedHebrewDate;
+        </script>
+
         <div id="heure"></div>
     </header>
     <main>
