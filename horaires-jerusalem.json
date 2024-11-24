@@ -1,0 +1,39 @@
+from datetime import datetime, timedelta
+from zmanim.zmanim_calendar import ZmanimCalendar
+from zmanim.util.geo_location import GeoLocation
+
+# Fonction pour générer les zmanim pour une année entière
+def generate_zmanim_for_year(year, latitude, longitude, elevation):
+    location = GeoLocation("Jerusalem", latitude=latitude, longitude=longitude, elevation=elevation, timeZone="Asia/Jerusalem")
+    start_date = datetime(year, 1, 1)
+    end_date = datetime(year, 12, 31)
+
+    zmanim_data = []
+    current_date = start_date
+    while current_date <= end_date:
+        calendar = ZmanimCalendar(location)
+        calendar.set_date(current_date)
+
+        zmanim_data.append({
+            "date": current_date.strftime("%Y-%m-%d"),
+            "alos_hashachar": calendar.get_alos_hashachar().strftime("%H:%M"),
+            "netz": calendar.get_neitz().strftime("%H:%M"),
+            "chatzot": calendar.get_chatzos().strftime("%H:%M"),
+            "shkiah": calendar.get_sunset().strftime("%H:%M"),
+            "tzeis": calendar.get_tzeis().strftime("%H:%M")
+        })
+        current_date += timedelta(days=1)
+
+    return zmanim_data
+
+# Exemple : Horaires pour Jérusalem
+latitude, longitude, elevation = 31.7683, 35.2137, 800
+year = datetime.now().year  # Remplacez par n'importe quelle année
+zmanim = generate_zmanim_for_year(year, latitude, longitude, elevation)
+
+# Sauvegarde dans un fichier JSON
+output_file = f"zmanim_jerusalem_{year}.json"
+with open(output_file, "w") as file:
+    import json
+    json.dump({"location": "Jerusalem", "elevation": elevation, "data": zmanim}, file, indent=4)
+print(f"Fichier généré : {output_file}")
