@@ -10,7 +10,7 @@ body {
 
 .sidebar {
     font-family: 'arial', sans-serif;
-    font-size: 25px;
+    font-size: 1.5em;
     width: 250px;
     position: fixed;
     top: 20px;
