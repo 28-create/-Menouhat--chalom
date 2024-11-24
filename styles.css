@@ -67,8 +67,7 @@ ul {
     font-family: 'arial', sans-serif;
     text-align: left;
     list-style: none;
-    padding-left: 150px; 
-    list-style-position: inside;
+    padding-left: 50px;
     margin: 10px 0; /* Ajoute de l'espace au-dessus et en dessous de la liste */
 }
 
