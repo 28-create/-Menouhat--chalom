@@ -50,9 +50,16 @@
             document.getElementById('gregorian-date').textContent = formattedGregorianDate;
     
             // Afficher la date hébraïque
-            const hebrewDate = new HebrewDate(currentDate); // Créer l'objet de la date hébraïque
-            const formattedHebrewDate = hebrewDate.toString(); // Obtenir la représentation sous forme de chaîne
-            document.getElementById('hebrew-date').textContent = formattedHebrewDate;
+                const apiUrl = "https://www.hebcal.com/converter?cfg=json&gy=2024&gm=11&gd=24&g2h=1"; // Exemple d'API pour obtenir une date hébraïque
+                fetch(apiUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        const hebrewDate = data.hebrew;
+                        document.getElementById('hebrew-date').textContent = hebrewDate;
+                    })
+                    .catch(error => {
+                        console.log("Erreur lors de la récupération de la date hébraïque :", error);
+                    });
         </script>
 
         <div id="heure"></div>
