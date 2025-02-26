@@ -14,6 +14,8 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon-32x32.png" sizes="32x32" type="image/png">
     <title>Deux Colonnes</title>
+    <title>Date Hébraïque</title>
+    <script src="https://cdn.jsdelivr.net/npm/hebrewdate@latest/hebrewdate.js"></script>
     <style>
         /* Style pour la mise en page à deux colonnes */
         .container {
@@ -39,7 +41,7 @@
        
      <div class="sidebar">
         <p class="date"> <span id="gregorian-date"></span></p>
-        <p class="date"> <span id="hebrew-date"></span></p>
+        <p class="date"> <span id="hebrewDate"></span></p>
     </div>
     
         <script>
@@ -47,18 +49,9 @@
             const currentDate = new Date();
             const formattedGregorianDate = currentDate.toLocaleDateString('fr-FR'); // Format français
             document.getElementById('gregorian-date').textContent = formattedGregorianDate;
-    
-            // Afficher la date hébraïque
-                const apiUrl = "https://www.hebcal.com/converter?cfg=json&gy=2024&gm=11&gd=24&g2h=1"; // Exemple d'API pour obtenir une date hébraïque
-                fetch(apiUrl)
-                    .then(response => response.json())
-                    .then(data => {
-                        const hebrewDate = data.hebrew;
-                        document.getElementById('hebrew-date').textContent = hebrewDate;
-                    })
-                    .catch(error => {
-                        console.log("Erreur lors de la récupération de la date hébraïque :", error);
-                    });
+            const hebrewDate = new HebrewDate();
+            const dateElement = document.getElementById('hebrewDate');
+            dateElement.textContent = hebrewDate.toString();
         </script>
 
         <div id="heure"></div>
