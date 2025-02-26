@@ -45,17 +45,7 @@ function updateCivilDate() {
   document.getElementById("date-civil").textContent = "Date civile : " + civilDateString;
 }
 
-// Fonction pour afficher la date hébraïque
-function updateHebrewDate() {
-  const now = new Date();
-  const hebrewDate = new HebrewDate(now);
-  const hebrewDay = hebrewDate.getDate();
-  const hebrewMonth = hebrewDate.getMonth();
-  const hebrewYear = hebrewDate.getFullYear();
 
-  const hebrewDateString = `${hebrewDay} ${hebrewMonth} ${hebrewYear}`;
-  document.getElementById("date-hebraique").textContent = "Date hébraïque : " + hebrewDateString;
-}
 
 // Mettre à jour l'heure, la date civile et la date hébraïque toutes les secondes
 setInterval(() => {
