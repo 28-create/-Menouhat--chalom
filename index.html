@@ -52,7 +52,7 @@
             document.getElementById('gregorian-date').textContent = formattedGregorianDate;
             
             moment.locale('he'); // Configure la localisation en hébreu
-            const hebrewDate = moment().format('LLLL'); // Utilise la localisation hébraïque
+            const hebrewDate = moment().format('D MMMM YYYY'); // Utilise la localisation hébraïque
             const dateElement = document.getElementById('hebrewDate');
             dateElement.textContent = hebrewDate;
   </script>
