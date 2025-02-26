@@ -15,8 +15,9 @@
     <link rel="icon" href="images/favicon-32x32.png" sizes="32x32" type="image/png">
     <title>Deux Colonnes</title>
     <title>Date Hébraïque</title>
-    <script src="https://cdn.jsdelivr.net/npm/hebrewdate@latest/hebrewdate.js"></script>
-    <style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-hebrew/1.1.1/moment-hebrew.min.js"></script>
+     <style>
         /* Style pour la mise en page à deux colonnes */
         .container {
             display: flex;
@@ -32,7 +33,7 @@
         .column:last-child {
             background-color: #e9e9e9;
         }
-    </style>
+     </style>
 </head>
 <body>
     <header>
@@ -43,15 +44,18 @@
         <p class="date"> <span id="gregorian-date"></span></p>
         <p class="date"> <span id="hebrewDate"></span></p>
     </div>
-    
+    <div id="hebrewDate"></div>
         <script>
             // Afficher la date grégorienne (civile)
             const currentDate = new Date();
             const formattedGregorianDate = currentDate.toLocaleDateString('fr-FR'); // Format français
             document.getElementById('gregorian-date').textContent = formattedGregorianDate;
-            const hebrewDate = new HebrewDate();
+            
+            moment.locale('he'); // Configure la localisation en hébreu
+            const hebrewDate = moment().format('LLLL'); // Utilise la localisation hébraïque
             const dateElement = document.getElementById('hebrewDate');
-            dateElement.textContent = hebrewDate.toString();
+            dateElement.textContent = hebrewDate;
+  </script>
         </script>
 
         <div id="heure"></div>
